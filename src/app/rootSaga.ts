@@ -1,4 +1,5 @@
 import { all } from "redux-saga/effects";
+import AuthSaga from "../features/auth/AuthSaga";
 import counterSaga from "../features/counter/counterSaga";
 
 // function* log(action: PayloadAction) {
@@ -11,5 +12,5 @@ import counterSaga from "../features/counter/counterSaga";
 
 export default function* rootSaga() {
   console.log("root saga");
-  yield all([counterSaga()]);
+  yield all([counterSaga(), AuthSaga()]);
 }
